@@ -4,9 +4,9 @@
 
 ## Why
 
-There is a lot of dogmatism and hearsay in the area of Computer Graphics, specially on regard of the mobile GPUs area; and it doesnt help that one of the biggest players on this hardware space (Qualcomm) is a *really* closed ecosystem, without a lot of documentation.
+There is a lot of dogmatism and hearsay in the area of Computer Graphics, specially in the area of mobile GPUs. And it does not help that one of the biggest players in this hardware space (Qualcomm) is a *really* closed ecosystem, with not a lot of public documentation. This hardware is usually quite different from their desktop counterparts, with a distinct (tiled) infrastructure. Wich brings a new set of constraints to the table: it is not just a less powerfull version than its desktop counterparts.
 
-My goal is to understand better the strenghts & limitations of this hardware via empirical testing & debuging tools; on the usecase of rendering techniques that are not as straightforward as the explicit geometry rendering, and that being Volume rendering, on a VR platform.
+My goal is to better understand the strenghts & limitations of this hardware via empirical testing & debuging tools. I plan to do this throught the lens of stereoscopic volume rendering.
 
 ## The platform
 
@@ -67,7 +67,6 @@ The test will be done for each algorithm in a set of already stablished and fixe
 
 * [Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/raymarching/raymarching.md)
 * Mipmap Accelerated Raymarching
-
 
 ## Repositories
 
