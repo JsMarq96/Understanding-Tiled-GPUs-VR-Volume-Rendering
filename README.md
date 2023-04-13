@@ -1,5 +1,7 @@
 # Understanding Tiled Mobile GPUs throught VR Volume Rendering
 
+## NOTE: This is a WIP, the structure and data are due to change in the coming months; and corrections are always appreciated  :)
+
 ## Why
 
 There is a lot of dogmatism and hearsay in the area of Computer Graphics, specially on regard of the mobile GPUs area; and it doesnt help that one of the biggest players on this hardware space (Qualcomm) is a *really* closed ecosystem, without a lot of documentation.
@@ -19,6 +21,8 @@ It also offers some interesting capabilities, in the form of Qualcomm's exclusiv
 ## The metodology
 
 The main idea is to asses the cost of different rendering techiques, and try to remedy the issues of their implementation, and how they scale, the more percentage of the viewport is filled with the volume rendering in question.
+
+The volume that is going to be presented is the ubiquous bonsai 3D texture, and I am going to center in rendering an Isosurface, since when trying to achieve a volumetric or spectral representation there is not a lot of manouverability with the cost.
 
 The tecnhiques present some old aproaches, revisited in this paradigm; some usual suspects; and more mother aproaches:
 
@@ -42,3 +46,11 @@ Using the RenderDoc Meta Fork, it is posible to obtain quite a lot of low-level 
 * Usage per viewport tile
 
 This can help paint the cost of each different technique; in different viewport configurations
+
+## Tiled GPUs
+
+*on progress*
+
+## Tecnhiques
+
+* [Raymarching](https://)
