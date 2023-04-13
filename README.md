@@ -47,6 +47,16 @@ Using the RenderDoc Meta Fork, it is posible to obtain quite a lot of low-level 
 
 This can help paint the cost of each different technique; in different viewport configurations
 
+## The test enviorment
+
+The main enviorment is in OpenGL ES 3.3, due its comparable features to OpenGL 4.0; and since this tests are not in a complex scene, with different materials and messhes, I determined that the benefits of working in Vulkan in this set of test could be negligible (at least in most test).
+
+This tests have been ran in a Meta Quest 2, with software version XXX and with the performance indicator for both CPU & GPU set to maximun.
+
+The test will be done for each algorithm in a set of already stablished and fixed view positions, changing the size of the volume representation in the viewport.
+
+(TODO add examples)
+
 ## Tiled GPUs
 
 *on progress*
@@ -54,3 +64,10 @@ This can help paint the cost of each different technique; in different viewport 
 ## Tecnhiques
 
 * [Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/raymarching/raymarching.md)
+* Mipmap Accelerated Raymarching
+
+
+## Repositories
+
+* [Desktop, OpenGL 4.0 implementation](https://github.com/JsMarq96/Volume-Rendering-Desktop)
+* [Quest, OpenGL ES 3.3 implementation](https://github.com/JsMarq96/Quest-Tiled-Volume-Rendering)
