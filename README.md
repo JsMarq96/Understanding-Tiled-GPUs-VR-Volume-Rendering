@@ -45,7 +45,9 @@ Using the RenderDoc Meta Fork, it is posible to obtain quite a lot of low-level 
 * Fragments shaded
 * Usage per viewport tile
 
-This can help paint the cost of each different technique; in different viewport configurations
+This can help paint the cost of each different technique; in different viewport configurations.
+
+In order to reduce noise, the perspective for each test will be fixed, and the results will be averaged between multiple samples.
 
 ## The test enviorment
 
@@ -55,7 +57,7 @@ This tests have been ran in a Meta Quest 2, with software version XXX and with t
 
 The test will be done for each algorithm in a set of already stablished and fixed view positions, changing the size of the volume representation in the viewport.
 
-(TODO add examples)
+(TODO add the viewport examples)
 
 ## Tiled GPUs
 
