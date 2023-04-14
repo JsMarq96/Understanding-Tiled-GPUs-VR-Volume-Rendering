@@ -66,7 +66,7 @@ The test will be done for each algorithm in a set of already stablished and fixe
 ## Tecnhiques
 
 * [Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/raymarching/raymarching.md)
-* Mipmap Accelerated Raymarching
+* [Mipmap Accelerated Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/mipmap-accel-raymarching/mar.md)
 
 ## Repositories
 
