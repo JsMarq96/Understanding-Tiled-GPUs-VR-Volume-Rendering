@@ -1,6 +1,6 @@
 # Raymarching
 
-Raymarching is quite the ubiquious technique for representing volumes, mostly due to the straightworward & simple implementation, and the flexiblity that it presents, being able to render a isosurface or a spectral representation without changing nothing more than 2 lines.
+Raymarching is quite the ubiquitous technique for representing volumes. Thanks to the straightforward & simple implementation, and the flexibility that it presents. My implementation is based on the article [GPU Gems 2: Per pixel displacement mapping with Distance functions](https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-8-pixel-displacement-mapping-distance-functions). This was adapted to work without distance fields, by setting a constant step.
 
 But the cost of iteration is rather high, ending in a lot of texture sampling for each sample; and that being applied to mobile, I am expecting poor perfomance, due to the memory bandwith limitations.
 
