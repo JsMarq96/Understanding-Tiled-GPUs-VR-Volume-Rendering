@@ -8,7 +8,7 @@ The main goal of this algorithms is to generate a (most times) triangular mesh; 
 
 One of the more common techniques is the Marching cubes algorithm. The overall idea is to iterate thought the volume, taking 8 samples around each point, in a disposition of a square. We use the detected density in this points as an index for a look-up-table that contains 256 different triangles configurations.
 
-![Some of the marching cubes special cases.  (c) Wikipedia, created by Jean-Marie Favreau](assets\20230425_165406_marchingcubes.webp)
+![Some of the marching cubes special cases.  (c) Wikipedia, created by Jean-Marie Favreau](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/marchingcubes.webp?raw=true)
 
 This makes building the mesh a very cheap process; but it brings a few problems:
 
@@ -27,7 +27,7 @@ We can define this algorithm in 3 different stages:
 1. Surface detection: similar to the Marching cubes, the volume is iterated and sampling around the point, 8 times, in a square formation. The main difference here is the goal here is to generate the point (if there is) of the isosurface at that position. In order to achieve this, we can either interpolate or average between the samples with density detected. On this step we only need to check for two edge cases: all the samples present density (we are inside the volume) or no sample present density (we are outside the volume), which means that we do not create a point for that position.
 2. Surface triangularization: looking the presence of the neighboring points, and generate the triangle list according to that. The original paper proposes a look up of five neighbours per axis; only adding triangles where the vertices point backwards from each sampling cube.
 
-   ![Arm Mali GPU developer guide: surface net triangularization step](assets\20230425_171858_arm_surface_nets.png)
+   ![Arm Mali GPU developer guide: surface net triangularization step](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/arm_surface_nets.png?raw=true)
 
    If we look at this image, we would only add a triangle on the vertices that make the green triangles.
 3. (Optional) Smoothing step: usually, look at the connected vertices and interpolate between then. This step can lead to smoother vertices; but at the risk of "shrinking" the resulting mesh. This is because the average position of all vertices converges to the center of the mesh. In order to fix this, is possible to use a constraint in the smoothing step, but can add to the performance.
@@ -37,7 +37,7 @@ This results in vertices with a more natural shape with less vertices, when comp
 The following table presents the difference between volumes build from Marching cubes and Surface nets; a comparison done by [Mikola Lysenko](https://0fps.net/2012/07/12/smooth-voxel-terrain-part-2/).
 
 
-| ![Sphere with Marching Cubes](assets\20230425_173812_spheremc.webp) | ![Sphere with Surface Nets](..\imgs\spheredc.webp) | ![Sphere with Marching Cubes](..\imgs\goursatmc.webp) | ![Sphere with Marching Cubes](..\imgs\spheredc.webp) |
+| ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/spheremc.webp?raw=true) | ![Sphere with Surface Nets](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/spheredc.webp?raw=true) | ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/goursatmc.webp?raw=true) | ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/goursatdc.webp?raw=true) |
 | :-------------------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ |
 | Sphere with Marching cubes                                          | Sphere with Surface nets                           | Goursat Surface with Marching cubes                   | Goursat Surface with Surface netsMarching cube       |
 | 1140 verts, 572 faces                                               | 272 verts, 270 faces                               | 80520 verts, 40276 faces                              | 20122 verts, 20130 faces                             |
