@@ -76,7 +76,7 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 
 *on progress*
 
-## Tecnhiques
+## Techniques
 
 * [Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/raymarching/raymarching.md)
 * [Mipmap Accelerated Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/mipmap-accel-raymarching/mar.md)
