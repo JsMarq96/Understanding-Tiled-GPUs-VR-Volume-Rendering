@@ -30,6 +30,7 @@ The techniques present some old approaches, revisited in this paradigm; some usu
 * MipMap Accelerated Raymarching
 * Volumetric Billboards
 * Surface nets
+* Empty Space Skipping
 * Octree based rendering
 
 If time allows, It would also be interesting how effective can be the different more traditional VR techniques on top of this list; like Foveated Rendering.
@@ -55,7 +56,7 @@ The tests will be done in different fixed perspectives; and a final free-roam te
 
 ## The test & development environment
 
-When working with a standalone headset like the Quest 2, remote development can be a challenge. The debugging utilities are limited, with a (comparatively) huge time to deploy, when compared to desktop development. 
+When working with a standalone headset like the Quest 2, remote development can be a challenge. The debugging utilities are limited, with a (comparatively) huge time to deploy, when compared to desktop development.
 
 Taking advantage of the cross-platform nature of OpenGL, the development was done on a desktop system with the following specs:
 
@@ -84,3 +85,14 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 
 * [Desktop, OpenGL 4.0 implementation](https://github.com/JsMarq96/Volume-Rendering-Desktop)
 * [Quest, OpenGL ES 3.3 implementation](https://github.com/JsMarq96/Quest-Tiled-Volume-Rendering)
+
+## References
+
+* [GPU Gems 2: Per pixel displacement mapping with Distance functions](https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-8-pixel-displacement-mapping-distance-functions)
+* [Indirect Illumination with Efficient Monte Carlo Denoising](https://link.springer.com/article/10.1007/s11042-020-09884-5)
+* [Qualcomm's Official Snapdragon Mobile Platform OpenCL Optimization Guide](https://developer.qualcomm.com/download/adrenosdk/adreno-opencl-programming-guide.pdf?referrer=node/6114https:/)
+* [ARM Mali Best Practices]([https://documentation-service.arm.com/static/62f4f9b7c3b04f2bd53e1c65](https://documentation-service.arm.com/static/62f4f9b7c3b04f2bd53e1c65))
+* [Qualcomm Adreno best Practices](https://developer.qualcomm.com/sites/default/files/docs/adreno-gpu/snapdragon-game-toolkit/gdg/gpu/best_practices.html)
+* [Volumetric Billboards](https://hal.inria.fr/inria-00402067)
+* [GigaVoxels: ray-guided streaming for efficient and detailed voxel rendering](https://dl.acm.org/doi/10.1145/1507149.1507152)
+* [Constrained Elastic Surface Nets:generating smooth surfaces from binary segmented data](https://www.merl.com/publications/docs/TR99-24.pdf)
