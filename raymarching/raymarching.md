@@ -4,9 +4,29 @@ Raymarching is quite the ubiquitous technique for representing volumes. Thanks t
 
 But the cost of iteration is rather high, ending in a lot of texture sampling for each sample; and that being applied to mobile, I am expecting poor perfomance, due to the memory bandwith limitations.
 
-In this implementation the step size is fixed to 0.005 and a maximun of 200 iterations, contained into the proxy geometry of a unit cube; and the algorithm was set to find de isosurface of at least a density of 0.15, and return its position as a fragment color. This was able to present the volume fully, without any percived loss in quality.
+## Implementation
 
-I will not be delving deeply in this technique, since its main interesintg point is to serve as a baseline & comparison point.
+The fundamental idea of raymarching lies in interating a ray with a fixed step. The ray's origin lies in the center of the camera, with the direction of a fragment in the projection plane. When one of the rays intersect with the volume, the raymarching process begins.
+
+![Raymarching diagram, from Transmitance function mapping (DOI:10.1145/1944745.1944751)](assets\20230425_152811_Notations-and-principle-of-a-classical-ray-marching-algorithm-to-compute-single.png)
+
+In this current implementation we are interested to find the isosurface. In order to achieve that, we stop the iteration the moment that we detect the sampled density goes up a certain threshold.
+
+```
+while point p is inside volume or has not excided the max number of iterations:
+     p = p + ray_direction * step_size
+     density = sample volume at p
+     if p > density threshold:
+          return p as isosurface point
+```
+
+This algorithm presents 3 parameters:
+
+* Step size: distance between sampling points along the ray. A huge step could lead to a loss in detail and inconsistency between viewpoints. But a small step could lead to poor performance since there are uncesessary samples taken along the way.
+* Maximun number of iterations: in order to restrict the number of samples, for a guranteed minimun in performance. Few steps can lead to only a partial render; and too much can lead to performance drops in tricky perspectives.
+* Density threshold: since the interest of this test is to find a isosurface, we use the density threshold as a way to determine when the surface starts. A high number can include noise present in the original image, or unwanted data; and setting it to low, can lead to skipping some
+
+For this test the step size is fixed to 0.005 and a maximun of 200 iterations, with a density threshold of 0.15. This was able to present the volume fully, without any percived loss in quality.
 
 ## Results
 
@@ -23,4 +43,10 @@ I will not be delving deeply in this technique, since its main interesintg point
 
 ## Conclusions
 
-As expected the main issue with raymarching is its poor fragment scalability on the viewport, due its high cost per fragment, most probably due to a texture memory bandwidth issue, as we can see the texture vertex fetch stall rising to a 50% the more of the fragments that are on the viewport.
+As expected the main issue with raymarching is its poor fragment scalability on the viewport, due its high cost on texture reads per fragment.
+
+One interesting behabiour observed is that the highest texture stall (77%) and the highest total of readed bytes from a texture (52538700) came from the far rendering perspective. This can be explained when looking at the cache misses on texture memory: since we are looking at fragments close to eachother in screen-space, but are further on texture space. This is not presented as an issue in the overall frametime, due to the small number of fragments shaded in those stages.
+
+But the closer we are to the model, we can observe a relieve on the the texture pipeline, and minimization on the cache misses. (NOTE & TODO: Contrast this with the Textures/Fragment Metric! Is the number of calls higher near vs far??)
+
+This indicated that the texture cache is extreamly important mechanism in this architecture; and that in order to achieve good performance there need to be a balance between locality & number of fragments. The following methods will try to remedy this problems.
