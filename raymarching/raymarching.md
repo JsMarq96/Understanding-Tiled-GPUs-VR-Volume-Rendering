@@ -8,7 +8,7 @@ But the cost of iteration is rather high, ending in a lot of texture sampling fo
 
 The fundamental idea of raymarching lies in interating a ray with a fixed step. The ray's origin lies in the center of the camera, with the direction of a fragment in the projection plane. When one of the rays intersect with the volume, the raymarching process begins.
 
-![Raymarching diagram, from Transmitance function mapping (DOI:10.1145/1944745.1944751)](assets\20230425_152811_Notations-and-principle-of-a-classical-ray-marching-algorithm-to-compute-single.png)
+![Raymarching diagram, from Transmitance function mapping (DOI:10.1145/1944745.1944751)](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/raymarching/assets/20230425_152811_Notations-and-principle-of-a-classical-ray-marching-algorithm-to-compute-single.png?raw=true)
 
 In this current implementation we are interested to find the isosurface. In order to achieve that, we stop the iteration the moment that we detect the sampled density goes up a certain threshold.
 
