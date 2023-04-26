@@ -99,3 +99,4 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 * [GigaVoxels: ray-guided streaming for efficient and detailed voxel rendering](https://dl.acm.org/doi/10.1145/1507149.1507152)
 * [Constrained Elastic Surface Nets:generating smooth surfaces from binary segmented data](https://www.merl.com/publications/docs/TR99-24.pdf)
 * [Smooth Voxel Terrain part 2](https://0fps.net/2012/07/12/smooth-voxel-terrain-part-2/)
+* [Learning from Failure (SIGGRAPH 2015), by Alex Evans of Media Molecule](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf)
