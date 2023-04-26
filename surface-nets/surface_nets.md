@@ -56,3 +56,7 @@ One other aspect is that via the use of Shader Storage Buffer Objects (SSBOs) an
 6. Configure the VAO using the finalised vertices buffer; in order to render directly from the generated buffers.
 
 The rendering now is of a normal mesh with Opengl: bind the VAO and render with glDrawArrays.
+
+## Performance
+### The Mesh generation step
+Since there is only the need to generate the mesh once; I do it just once per run.
