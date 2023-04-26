@@ -14,7 +14,7 @@ The distance between the slices and the number of slices can vary, depending on 
 
 By superimposing all the slices (in a back-to-front manner, with alpha blending), you get not only a volume render, but also a volumetric render, for the same cost. This, convined to the straightfoward use of the GPU, made me thik that could be extreamly usefull for mobile render devices.
 
-But one limitation of this techique is, apart from the number of drawcalls, the memory usage & the overdraw. 
+But one limitation of this techique is, apart from the number of drawcalls, the memory usage & the overdraw.
 
 ## Implementation
 
@@ -25,6 +25,11 @@ The proposed solution is to use a succession of quads, aligned with the most fac
 One other change that I decided is to order the render of the quads front-to-back. This is oposed to the recomendation of the paper,  since the goal there is to accumulate the samples for rendering volumetrics.
 
 But here, my goal is to render a volume, the isosurface. In order to achieve this, I am only rendering the fragments that cross the depth threshold, and making it opaque. This mixed with the front-to-back ordering, allows to prevent overdraw, enhancing performance.
+
+
+| ![](assets\20230426_160058_billboards.PNG)      | ![](assets\20230426_160117_bill_iso.PNG)        |
+| ------------------------------------------------- | ------------------------------------------------- |
+| Volumetric rendering with Volumetric Billboards | Isosurface rendering with Volumetric Billboards |
 
 One pitfall easy to have in this technique is to mess the rendering order. Since we are super-impossing quad after quad, it can lead to a ton of overdraw. This can bring a worse case (full viewport) from a acceptable 16ms to a stuttery 29ms. In order to avoid this, the render order must only start drawing from the closest of the camera.
 
