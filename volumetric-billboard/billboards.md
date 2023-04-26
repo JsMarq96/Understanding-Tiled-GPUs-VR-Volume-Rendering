@@ -38,3 +38,11 @@ One pitfall easy to have in this technique is to mess the rendering order. Since
 Previously, I talked about how for this project, it does not make a lot of sense to work with Vulkan due to the nature of the algorithms on this project. But this is the only exception: here we are rendering 200 to 125 drawcalls per eye, per frame. On OpenGL, the cost of the drawcall can start to make a difference; end that can be mitigated with the use of instancing.
 
 But here, I decided not to implement this (yet). Since the cost of the amount of drawcalls can be intuited on the "Not looking" perspective. If I have time, I will come back to this with this changes.
+
+
+
+
+
+## Future work
+There are multiple things that we can take from the results, and this implementation, apart from the instancing, or using a lower level API with lower overheads per drawcall. On the original paper they describe the use of bounding shapes in order to reduce the amount of fragments to be shaded. This shapes are more tightly fitted to the volume in question, and can be done manually and procedurally.
+One problem
