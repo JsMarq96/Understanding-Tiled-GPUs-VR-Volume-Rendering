@@ -8,7 +8,7 @@ The main idea is to take advangate of the structure and normal behaviour of a GP
 
 The paper proposes the use of a slized bounding box, with the slizes aligned to the viewport. This slices are computed using mesh shaders. When rendering this slices, they sample the volume based on the fragment position, inside the cube.
 
-![Fig taken from the volumetric billboards paper](assets\20230426_153603_bill.PNG)
+![Fig taken from the volumetric billboards paper](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/bill.PNG?raw=true)
 
 The distance between the slices and the number of slices can vary, depending on the distance to the camera.
 
@@ -27,7 +27,7 @@ One other change that I decided is to order the render of the quads front-to-bac
 But here, my goal is to render a volume, the isosurface. In order to achieve this, I am only rendering the fragments that cross the depth threshold, and making it opaque. This mixed with the front-to-back ordering, allows to prevent overdraw, enhancing performance.
 
 
-| ![](assets\20230426_160058_billboards.PNG)      | ![](assets\20230426_160117_bill_iso.PNG)        |
+| ![](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/billboards.PNG?raw=true)      | ![](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/bill_iso.PNG?raw=true)        |
 | ------------------------------------------------- | ------------------------------------------------- |
 | Volumetric rendering with Volumetric Billboards | Isosurface rendering with Volumetric Billboards |
 
