@@ -81,6 +81,7 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 * [Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/raymarching/raymarching.md)
 * [Mipmap Accelerated Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/mipmap-accel-raymarching/mar.md)
 * [Surface nets](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/surface-nets/surface_nets.md)
+* [Volumetric billboards](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/volumetric-billboard/billboards.md)
 
 ## Repositories
 
