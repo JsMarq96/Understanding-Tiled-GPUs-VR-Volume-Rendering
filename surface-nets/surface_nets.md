@@ -39,7 +39,7 @@ The following table presents the difference between volumes build from Marching 
 
 | ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/spheremc.webp?raw=true) | ![Sphere with Surface Nets](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/spheredc.webp?raw=true) | ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/goursatmc.webp?raw=true) | ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/goursatdc.webp?raw=true) |
 | :-------------------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ |
-| Sphere with Marching cubes                                          | Sphere with Surface nets                           | Goursat Surface with Marching cubes                   | Goursat Surface with Surface netsMarching cube       |
+| Sphere with Marching cubes                                          | Sphere with Surface nets                           | Goursat Surface with Marching cubes                   | Goursat Surface with Surface net       |
 | 1140 verts, 572 faces                                               | 272 verts, 270 faces                               | 80520 verts, 40276 faces                              | 20122 verts, 20130 faces                             |
 
 ## Implementation of Surface nets
