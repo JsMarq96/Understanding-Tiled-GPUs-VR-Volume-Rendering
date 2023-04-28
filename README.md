@@ -1,8 +1,12 @@
 # Understanding Tiled Mobile GPUs through VR Volume Rendering
 
-## NOTE: This is a WIP, the structure and data are due to change in the coming months; and corrections are always appreciated  :)
+## NOTE: This is a WIP, the structure and data are due to change in the coming weeks; and suggestions/comments/corrections are always appreciated  :)
 
-## Why
+## The Goal and Why
+
+My goal is to better understand the strenghts and limitations of the tiled GPU architecture, under the lens of stereocopic volume rendering. In order to achieve this I intent to do empirical testing via the use of performance profilers and multiple tests, on the Meta Quest 2 platform, powered by Qualcomm Adreno Graphics.
+
+Qualcomm is one of the biggest players in the mobile GPU hardware space, supplying them for one of the most widespread devices nowadays, the Meta Quest 2 VR headset from Meta. However, its ecosystem is very closed, and very little documentation is available to the public.
 
 There is a lot of dogmatism and hearsay in the area of Computer Graphics, specially in the area of mobile GPUs. And it does not help that one of the biggest players in this hardware space (Qualcomm) is a *really* closed ecosystem, with not a lot of public documentation. This hardware is usually quite different from their desktop counterparts, with a distinct (tiled) infrastructure. Which brings a new set of constraints to the table: it is not just a less powerful version than its desktop counterparts.
 
@@ -22,16 +26,16 @@ It also offers some interesting capabilities, in the form of Qualcomm's exclusiv
 
 The main idea is to asses the cost of different rendering techniques, and try to remedy the issues of their implementation, and how they scale, the more percentage of the viewport is filled with the volume rendering in question.
 
-The volume that is going to be presented is the ubiquitous bonsai 3D texture, and I am going to center in rendering an Isosurface, since when trying to achieve a volumetric or spectral representation there is not a lot of maneuverability with the cost.
-
 The techniques present some old approaches, revisited in this paradigm; some usual suspects; and more modern ones:
 
-* Raymarching
-* MipMap Accelerated Raymarching
-* Volumetric Billboards
-* Surface nets
+* Raymarching: a classical approach, representing ray-based methods.
+* MipMap Accelerated Raymarching: modern acceleration on top of classical raymarching.
+* Volumetric Billboards: a unused approach, revisited for mobile.
+* Surface nets: representing mesh generation methods.
 * Empty Space Skipping
 * Octree based rendering
+
+The volume that is going to be presented is the ubiquitous bonsai 3D texture, and I am going to center in rendering an Isosurface, since when trying to achieve a volumetric or spectral representation there is not a lot of maneuverability with the cost.
 
 If time allows, It would also be interesting how effective can be the different more traditional VR techniques on top of this list; like Foveated Rendering.
 
@@ -74,7 +78,13 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 
 ## Tiled GPUs
 
-*on progress*
+One of the fundamental problems of mobile GPUs is power consumption and termal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip).
+
+In order to fix that, they proposed the used of a Tiled Achirecture for the GPU. The GPU will split the framebuffer in bins, and compute them within a high speed local memory for each bin (called GMEM in Snapdragon Adreno GPUs).
+
+This limits the data traffic to the system memory, reducing power consumption. This can help
+
+(https://github.com/mems/calepin/blob/main/Graphics/Graphics.md & https://www.youtube.com/watch?v=SeySx0TkluE)
 
 ## Techniques
 
