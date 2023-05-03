@@ -38,9 +38,9 @@ The following table presents the difference between volumes build from Marching 
 
 
 | ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/spheremc.webp?raw=true) | ![Sphere with Surface Nets](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/spheredc.webp?raw=true) | ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/goursatmc.webp?raw=true) | ![Sphere with Marching Cubes](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/goursatdc.webp?raw=true) |
-| :-------------------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ |
-| Sphere with Marching cubes                                          | Sphere with Surface nets                           | Goursat Surface with Marching cubes                   | Goursat Surface with Surface net       |
-| 1140 verts, 572 faces                                               | 272 verts, 270 faces                               | 80520 verts, 40276 faces                              | 20122 verts, 20130 faces                             |
+| :---------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Sphere with Marching cubes                                                                                                                    | Sphere with Surface nets                                                                                                                    | Goursat Surface with Marching cubes                                                                                                            | Goursat Surface with Surface net                                                                                                               |
+| 1140 verts, 572 faces                                                                                                                         | 272 verts, 270 faces                                                                                                                        | 80520 verts, 40276 faces                                                                                                                       | 20122 verts, 20130 faces                                                                                                                       |
 
 ## Implementation of Surface nets
 
@@ -58,5 +58,7 @@ One other aspect is that via the use of Shader Storage Buffer Objects (SSBOs) an
 The rendering now is of a normal mesh with Opengl: bind the VAO and render with glDrawArrays.
 
 ## Performance
+
 ### The Mesh generation step
-Since there is only the need to generate the mesh once; I do it just once per run.
+
+Since there is only the need to generate the mesh once; I do it just once per run while initializing.

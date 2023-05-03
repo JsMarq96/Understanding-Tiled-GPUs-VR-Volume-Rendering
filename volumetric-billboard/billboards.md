@@ -27,22 +27,19 @@ One other change that I decided is to order the render of the quads front-to-bac
 But here, my goal is to render a volume, the isosurface. In order to achieve this, I am only rendering the fragments that cross the depth threshold, and making it opaque. This mixed with the front-to-back ordering, allows to prevent overdraw, enhancing performance.
 
 
-| ![](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/billboards.PNG?raw=true)      | ![](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/bill_iso.PNG?raw=true)        |
-| ------------------------------------------------- | ------------------------------------------------- |
-| Volumetric rendering with Volumetric Billboards | Isosurface rendering with Volumetric Billboards |
+| ![](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/billboards.PNG?raw=true) | ![](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/bill_iso.PNG?raw=true) |
+| ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Volumetric rendering with Volumetric Billboards                                                                      | Isosurface rendering with Volumetric Billboards                                                                    |
 
-One pitfall easy to have in this technique is to mess the rendering order. Since we are super-imposting quad after quad, it can lead to a ton of overdraw. This can bring a worse case (full viewport) from a acceptable 16ms to a stutters 29ms. In order to avoid this, the render order must only start drawing from the closest of the camera.
+One pitfall easy to have in this technique is to mess the rendering order. Since we are super-imposting quad after quad, it can lead to a ton of overdraw. This can bring a worse case (full viewport) from a acceptable 16ms to a stuttery 29ms. In order to avoid this, the render order must only start drawing from the closest of the camera.
 
 ### Implementation: Drawcalls and OpenGL
 
-Previously, I talked about how for this project, it does not make a lot of sense to work with Vulkan due to the nature of the algorithms on this project. But this is the only exception: here we are rendering 200 to 125 drawcalls per eye, per frame. On OpenGL, the cost of the drawcall can start to make a difference; end that can be mitigated with the use of instancing.
+Previously, I talked about how for this project, it does not make a lot of sense to work with Vulkan due to the nature of the algorithms on this project. But this is the only exception: here we are rendering from 200 to 125 drawcalls per eye, per frame. On OpenGL, the cost of the drawcall can start to make a difference; end that can be mitigated with the use of instancing.
 
 But here, I decided not to implement this (yet). Since the cost of the amount of drawcalls can be intuited on the "Not looking" perspective. If I have time, I will come back to this with this changes.
 
-
-
-
-
 ## Future work
+
 There are multiple things that we can take from the results, and this implementation, apart from the instancing, or using a lower level API with lower overheads per drawcall. On the original paper they describe the use of bounding shapes in order to reduce the amount of fragments to be shaded. This shapes are more tightly fitted to the volume in question, and can be done manually and procedurally.
-One problem
+This still requires the use of mesh shaders, and in this project I preffer to stear away of mesh shader, due the incompatiblity with VR on the hardware.
