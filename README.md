@@ -4,7 +4,7 @@
 
 ## The Goal and Why
 
-My goal is to better understand the strenghts and limitations of the tiled GPU architecture, under the lens of stereocopic volume rendering. In order to achieve this I intent to do empirical testing via the use of performance profilers and multiple tests, on the Meta Quest 2 platform, powered by Qualcomm Adreno Graphics.
+My goal is to better understand the strengths and limitations of the tiled GPU architecture, under the lens of stereoscopic volume rendering. In order to achieve this I intend to do empirical testing via the use of performance profilers and multiple tests, on the Meta Quest 2 platform, powered by Qualcomm Adreno Graphics.
 
 Qualcomm is one of the biggest players in the mobile GPU hardware space, supplying them for one of the most widespread devices nowadays, the Meta Quest 2 VR headset from Meta. However, its ecosystem is very closed, and very little documentation is available to the public.
 
@@ -12,25 +12,15 @@ There is a lot of dogmatism and hearsay in the area of Computer Graphics, specia
 
 My goal is to better understand the strengths & limitations of this hardware via empirical testing & debugging tools. I plan to do this through the lens of stereoscopic volume rendering.
 
-## The platform
-
-Since there is a lot of variability between manufacturers of mobile GPUs, I decided to go with the most ubiquitous one, Qualcomm and their Snapdragon XR2 SOC; in the Meta Quest 2 device.
-
-My reasoning for this is straightforward: is the most ubiquitous and accessible XR device, and that allowed Qualcomm to stay as the de-facto chip maker for XR mobile-powered devices; and researching volume rendering in this application can bring benefits to more cost effective VR medical platforms.
-
-This poses some problems, like the absolute absence of official documentation of the SOC, best practices, and this sort of techniques.
-
-It also offers some interesting capabilities, in the form of Qualcomm's exclusive extensions, for Variable Rate Shading, Frame Reprojecting, Foveated Rendering, and so.
-
 ## The methodology
 
-The main idea is to asses the cost of different rendering techniques, and try to remedy the issues of their implementation, and how they scale, the more percentage of the viewport is filled with the volume rendering in question.
+The main idea is to assess the cost of different rendering techniques, and try to remedy the issues of their implementation, and how they scale, the more percentage of the viewport is filled with the volume rendering in question.
 
 The techniques present some old approaches, revisited in this paradigm; some usual suspects; and more modern ones:
 
 * Raymarching: a classical approach, representing ray-based methods.
 * MipMap Accelerated Raymarching: modern acceleration on top of classical raymarching.
-* Volumetric Billboards: a unused approach, revisited for mobile.
+* Volumetric Billboards: an unused approach, revisited for mobile.
 * Surface nets: representing mesh generation methods.
 * Empty Space Skipping
 * Octree based rendering
@@ -54,9 +44,19 @@ This can help paint the cost of each different technique; in different viewport 
 
 In order to reduce run-to-run variance, the perspective for each test will be fixed, and the results will be averaged between multiple samples.
 
-The tests will be done in different fixed perspectives; and a final free-roam test, for an overall experience. The fixed perspectives differ on the scale of the rendered volume in the viewport. This helps stablish the overall the cost in a per-pixel basis.
+The tests will be done in different fixed perspectives; and a final free-roam test, for an overall experience. The fixed perspectives differ on the scale of the rendered volume in the viewport. This helps establish the overall cost in a per-pixel basis.
 
 (TODO add the viewport examples)
+
+## The platform
+
+Since there is a lot of variability between manufacturers of mobile GPUs, I decided to go with the most ubiquitous one, Qualcomm and their Snapdragon XR2 SOC; in the Meta Quest 2 device.
+
+My reasoning for this is straightforward: it is the most ubiquitous and accessible XR device, and that allowed Qualcomm to stay as the de-facto chip maker for XR mobile-powered devices; and researching volume rendering in this application can bring benefits to more cost effective VR medical platforms.
+
+This poses some problems, like the absolute absence of official documentation of the SOC, best practices, and this sort of techniques.
+
+It also offers some interesting capabilities, in the form of Qualcomm's exclusive extensions, for Variable Rate Shading, Frame Reprojecting, Foveated Rendering, and so.
 
 ## The test & development environment
 
@@ -70,17 +70,17 @@ Taking advantage of the cross-platform nature of OpenGL, the development was don
 | GPU       | RTX 3080       |
 | RAM       | 16 GB 4800 MHz |
 
-This also helped to stablish a comparative baseline of performance.
+This also helped to establish a comparative baseline of performance.
 
 The test environment is a Meta Quest 2, running the software version XXX. The performance indicator for both GPU & CPU are set to maximum.
 
-The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 4.0. Since this tests are not in a complex scene, with different materials and meshes, I determined that the benefits of working in Vulkan in this set of test could be negligible (at least in most test). Most of the techniques require one draw-call per eye.
+The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 4.0. Since these tests are not in a complex scene, with different materials and meshes, I determined that the benefits of working in Vulkan in this set of tests could be negligible (at least in most tests). Most of the techniques require one draw-call per eye.
 
 ## Tiled GPUs
 
-One of the fundamental problems of mobile GPUs is power consumption and termal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip).
+One of the fundamental problems of mobile GPUs is power consumption and thermal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip).
 
-In order to fix that, they proposed the used of a Tiled Achirecture for the GPU. The GPU will split the framebuffer in bins, and compute them within a high speed local memory for each bin (called GMEM in Snapdragon Adreno GPUs).
+In order to fix that, they proposed the use of a Tiled Architecture for the GPU. The GPU will split the framebuffer in bins, and compute them within a high speed local memory for each bin (called GMEM in Snapdragon Adreno GPUs).
 
 This limits the data traffic to the system memory, reducing power consumption. This can help
 
