@@ -22,8 +22,8 @@ The techniques present some old approaches, revisited in this paradigm; some usu
 * MipMap Accelerated Raymarching: modern acceleration on top of classical raymarching.
 * Volumetric Billboards: an unused approach, revisited for mobile.
 * Surface nets: representing mesh generation methods.
-* Empty Space Skipping
-* Octree based rendering
+* Empty Space Skipping: a combination of mesh generation & raymarching, for less iterations.
+* Octree based rendering: an attempt to use pure virtual geometry for rendering.
 
 The volume that is going to be presented is the ubiquitous bonsai 3D texture, and I am going to center in rendering an Isosurface, since when trying to achieve a volumetric or spectral representation there is not a lot of maneuverability with the cost.
 
@@ -80,9 +80,7 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 
 One of the fundamental problems of mobile GPUs is power consumption and thermal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip).
 
-In order to fix that, they proposed the use of a Tiled Architecture for the GPU. The GPU will split the framebuffer in bins, and compute them within a high speed local memory for each bin (called GMEM in Snapdragon Adreno GPUs).
-
-This limits the data traffic to the system memory, reducing power consumption. This can help
+(WIP)
 
 (https://github.com/mems/calepin/blob/main/Graphics/Graphics.md & https://www.youtube.com/watch?v=SeySx0TkluE)
 
