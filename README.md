@@ -8,9 +8,9 @@ My goal is to better understand the strengths and limitations of the tiled GPU a
 
 Qualcomm is one of the biggest players in the mobile GPU hardware space, supplying them for one of the most widespread devices nowadays, the Meta Quest 2 VR headset from Meta. However, its ecosystem is very closed, and very little documentation is available to the public.
 
-There is a lot of dogmatism and hearsay in the area of Computer Graphics, specially in the area of mobile GPUs. And it does not help that one of the biggest players in this hardware space (Qualcomm) is a *really* closed ecosystem, with not a lot of public documentation. This hardware is usually quite different from their desktop counterparts, with a distinct (tiled) infrastructure. Which brings a new set of constraints to the table: it is not just a less powerful version than its desktop counterparts.
+This hardware is usually quite different from their desktop counterparts, with a distinct (tiled) infrastructure.The hardware is not just a less powerful version of their desktop counterparts; it brings is own set of constraints to the table. 
 
-My goal is to better understand the strengths & limitations of this hardware via empirical testing & debugging tools. I plan to do this through the lens of stereoscopic volume rendering.
+Via the use of empirical testing & debugging tools, I plan to better my understanding of this architecture, through the lens of stereoscopic volume rendering.
 
 ## The methodology
 
@@ -78,7 +78,7 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 
 ## Tiled GPUs
 
-One of the fundamental problems of mobile GPUs is power consumption and thermal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip). This was pointed out by Qualcomm as an aproximate of 16% of the total device power consupmtion, in the 2015 SIGGRAPH talk about Mobile hardware and Bandwidth:
+One of the fundamental problems of mobile GPUs is power consumption and thermal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip). This was pointed out by Qualcomm as an approximate of 16% of the total device power consumption, in the 2015 SIGGRAPH talk about Mobile hardware and Bandwidth:
 
 ![Slide from the Qualcomm presentation: https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-20-66/siggraph2015_2D00_mmg_2D00_andy_2D00_slides.pdf](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/power-consumption.PNG?raw=true)
 
