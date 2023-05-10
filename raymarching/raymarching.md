@@ -1,12 +1,14 @@
 # Raymarching
 
-Raymarching is quite the ubiquitous technique for representing volumes. Thanks to the straightforward & simple implementation, and the flexibility that it presents. My implementation is based on the article [GPU Gems 2: Per pixel displacement mapping with Distance functions](https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-8-pixel-displacement-mapping-distance-functions). This was adapted to work without distance fields, by setting a constant step.
+The raymarching algorithm is based around regular sampling through a 3D volume, along a ray; in order to obtain the transversal density for the ray. This makes it extremely useful for rendering volumes, and achieving volumetric or isosurface renderings.
 
-But the cost of iteration is rather high, ending in a lot of texture sampling for each sample; and that being applied to mobile, I am expecting poor performance, due to the memory bandwidth limitations.
+Thanks to the straightforward & simple implementation, with the flexibility that it presents, this technique is quite ubiquitous. But this nature also serves as one of its biggest weaknesses. It has a huge cost per fragment rendered due a lot of texture accesses.
 
 ## Implementation
 
-The fundamental idea of raymarching lies in intersecting a ray with a fixed step. The ray's origin lies in the center of the camera, with the direction of a fragment in the projection plane. When one of the rays intersect with the volume, the raymarching process begins.
+The fundamental idea of raymarching lies in traversing a ray with a fixed step. The ray's origin lies in the center of the camera, with the direction of a fragment in the projection plane. When one of the rays intersect with the volume, the raymarching process begins.
+
+My implementation is based on the article [GPU Gems 2: Per pixel displacement mapping with Distance functions](https://developer.nvidia.com/gpugems/gpugems2/part-i-geometric-complexity/chapter-8-pixel-displacement-mapping-distance-functions). This was adapted to work without distance fields, by setting a constant step.
 
 ![Raymarching diagram, from Transmittance function mapping (DOI:10.1145/1944745.1944751)](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/raymarching/assets/20230425_152811_Notations-and-principle-of-a-classical-ray-marching-algorithm-to-compute-single.png?raw=true)
 
