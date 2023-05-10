@@ -18,10 +18,10 @@ The main idea is to assess the cost of different rendering techniques, and try t
 
 The techniques present some old approaches, revisited in this paradigm; some usual suspects; and more modern ones:
 
-* Raymarching: a classical approach, representing ray-based methods.
-* MipMap Accelerated Raymarching: modern acceleration on top of classical raymarching.
-* Volumetric Billboards: an unused approach, revisited for mobile.
-* Surface nets: representing mesh generation methods.
+* [Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/raymarching/raymarching.md): a classical approach, representing ray-based methods.
+* [Mipmap Accelerated Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/mipmap-accel-raymarching/mar.md): modern acceleration on top of classical raymarching.
+* [Volumetric billboards](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/volumetric-billboard/billboards.md): an unused approach, revisited for mobile.
+* [Surface nets](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/surface-nets/surface_nets.md): representing mesh generation methods.
 * Empty Space Skipping: a combination of mesh generation & raymarching, for less iterations.
 * Octree based rendering: an attempt to use pure virtual geometry for rendering.
 
@@ -80,7 +80,7 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 
 One of the fundamental problems of mobile GPUs is power consumption and thermal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip). This was pointed out by Qualcomm as an aproximate of 16% of the total device power consupmtion, in the 2015 SIGGRAPH talk about Mobile hardware and Bandwidth:
 
-![Slide from the Qualcomm presentation: https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-20-66/siggraph2015_2D00_mmg_2D00_andy_2D00_slides.pdf](assets\20230510_165016_power-consumption.PNG)
+![Slide from the Qualcomm presentation: https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-20-66/siggraph2015_2D00_mmg_2D00_andy_2D00_slides.pdf](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/imgs/power-consumption.PNG?raw=true)
 
 In order to fix that, they proposed the use of a Tiled Architecture for the GPU. The GPU will split the framebuffer in bins, and compute them within a tiny high-speed on chip local memory for each bin (called GMEM in Snapdragon Adreno GPUs).
 
@@ -94,7 +94,7 @@ For example, using a (normal) deferred pipeline is out of the question, since fo
 (https://github.com/mems/calepin/blob/main/Graphics/Graphics.md & https://www.youtube.com/watch?v=SeySx0TkluE)
 
 ## Techniques index
-
+* [State of the Art & terminology](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/vr-state-of-the-art.md)
 * [Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/raymarching/raymarching.md)
 * [Mipmap Accelerated Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/mipmap-accel-raymarching/mar.md)
 * [Surface nets](https://github.com/JsMarq96/Understanding-Tiled-GPUs-VR-Volume-Rendering/blob/main/surface-nets/surface_nets.md)
