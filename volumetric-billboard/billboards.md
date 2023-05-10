@@ -1,6 +1,6 @@
 # Volumetric Billboards
 
-The next technique presents a departure from the other methods. Published on 2009, [Volumetric Billboards]([https://doi.org/10.1111/j.1467-8659.2009.01354.x](https://doi.org/10.1111/j.1467-8659.2009.01354.x)) aims to achieve volumetric rendering on super imposed proxy geometry, that samples the volume on slices.
+The next technique presents a departure from the other methods. Published on 2009, [Volumetric Billboards]([https://doi.org/10.1111/j.1467-8659.2009.01354.x](https://doi.org/10.1111/j.1467-8659.2009.01354.x)) aims to achieve volumetric rendering on super imposed proxy geometry (quads on my case), that sample the volume on slices.
 
 The main idea is to take advantage of the structure and normal behaviour of a GPU; but achieving a look and feel of a volumetric render with a more "unnatural" technique, like raymarching.
 

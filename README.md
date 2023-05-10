@@ -78,18 +78,22 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 
 ## Tiled GPUs
 
-One of the fundamental problems of mobile GPUs is power consumption and thermal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip).
+One of the fundamental problems of mobile GPUs is power consumption and thermal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip). This was pointed out by Qualcomm as an aproximate of 16% of the total device power consupmtion, in the 2015 SIGGRAPH talk about Mobile hardware and Bandwidth:
+
+![Slide from the Qualcomm presentation: https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-20-66/siggraph2015_2D00_mmg_2D00_andy_2D00_slides.pdf](assets\20230510_165016_power-consumption.PNG)
 
 In order to fix that, they proposed the use of a Tiled Architecture for the GPU. The GPU will split the framebuffer in bins, and compute them within a tiny high-speed on chip local memory for each bin (called GMEM in Snapdragon Adreno GPUs).
 
-This limits the data traffic to the system memory, reducing the need for a high-speed large memory. This results in better power consumption and efficiency.
+When rendering, the triangles are batched per bin, and evaluated all at once. This differs from the immediate mode rendering, of submitting a triangle & rendering it directly, as seen on desktop GPUs.
 
-However this means that more normal rendering approaches are prohibitive. 
-For example, using a deferred pipeline is out of the question. This is caused by the need of doing a render pass, and extracting it to GPU memory for sampling on the next pass. Since the framebuffer is stored in the bins, copying the data back has an extra-cost due to low-bandwidth communcation. This is called on snapdragon a GMEM Load, and are strongly discouraged.
+This limits the data traffic to the system memory, reducing the need for a high-speed large memory. This results in better power consumption and efficiency, but with downsides. When submitting a render pass, the system needs to copy the resulting framebuffer from each bin, in the GMEM, to system memory. This is called "resolving a frame", and adds a non-negligible cost on submitting a frame.
+
+This means that more normal rendering approaches are prohibitive.
+For example, using a (normal) deferred pipeline is out of the question, since for that to work, there is a need to resolve many times for a frame.
 
 (https://github.com/mems/calepin/blob/main/Graphics/Graphics.md & https://www.youtube.com/watch?v=SeySx0TkluE)
 
-## Techniques
+## Techniques index
 
 * [Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/raymarching/raymarching.md)
 * [Mipmap Accelerated Raymarching](https://github.com/JsMarq96/Understanding-Tileg-GPUs-VR-Volume-Rendering/blob/main/mipmap-accel-raymarching/mar.md)
@@ -115,4 +119,4 @@ For example, using a deferred pipeline is out of the question. This is caused by
 * [Learning from Failure (SIGGRAPH 2015), by Alex Evans of Media Molecule](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf)
 * [Compute for Mobile Devices (SIGGRAPH ASIA 2014), by Maxim Shevtson from Intel](https://kesen.realtimerendering.com/Compute_for_Mobile_Devices5.pdf)
 * [Understanding and resolving Graphics Memory Loads](https://developer.qualcomm.com/sites/default/files/docs/adreno-gpu/snapdragon-game-toolkit/gdg/tutorials/android/gmem_loads.html)
-* [Mobile hardware and bandwidth](https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-20-66/siggraph2015_2D00_mmg_2D00_andy_2D00_slides.pdf)
+* [Mobile hardware and bandwidth (SIGGRAPH 2015), by Andrew Gruber from Qualcomm](https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-20-66/siggraph2015_2D00_mmg_2D00_andy_2D00_slides.pdf)

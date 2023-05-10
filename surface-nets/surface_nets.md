@@ -1,5 +1,6 @@
 # Surface nets
 
+An algorithm that generates a triangle mesh, from an implicit surface representation.
 Originally presented on the paper [Constrained Elastic Surface Nets: generating smooth surfaces from binary segmented data (1999)](https://www.merl.com/publications/docs/TR99-24.pdf), the Surface Nets method present an alternative to the more traditional [Marching cubes (1987)](https://doi.org/10.1145/37402.37422) meshing algorithm.
 
 ## Meshing algorithms: Marching cubes

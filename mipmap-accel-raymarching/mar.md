@@ -1,6 +1,6 @@
 # Mipmap Accelerated Raymarching
 
-An expansion to classical raymarching, that aims to minimize the number of steps taken. Described originally on the paper **[Indirect Illumination with Efficient Monte Carlo Denoising](https://link.springer.com/article/10.1007/s11042-020-09884-5)** the MAR technique applies a dynamic step size depending on the current mipmap level.
+An expansion to classical raymarching, that aims to minimize the number of steps taken, skipping empty spaces with the use of the volume's mipmap. Described originally on the paper **[Indirect Illumination with Efficient Monte Carlo Denoising](https://link.springer.com/article/10.1007/s11042-020-09884-5)** the MAR technique applies a dynamic step size depending on the current mipmap level.
 
 The main idea is to harness the use of mipmap, for skipping empty regions. This presents a good alternative to classic raymarching, bringing some advantages:
 

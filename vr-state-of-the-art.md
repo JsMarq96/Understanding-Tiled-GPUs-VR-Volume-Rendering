@@ -4,9 +4,9 @@ Before starting with the techniques and results, I will be looking closely at th
 
 ## Stereoscopic rendering
 
-## VR Runtime: OpenXR & similars
+## VR Runtime: OpenXR & similar APIs
 
-With the current rise of XR manufacturers, and a lot of different XR enabled devices, there is a need for a OpenGL like API, to abstract manufacturer explicit code form the applications. Khronos Group's response is OpenXR, a cross platforms that generalices all XR devices. From a flat-screen AR application to a virtual production set, all these cases are covered on the API.
+With the current rise of XR manufacturers, and a lot of different XR enabled devices, there is a need for a OpenGL like API, to abstract manufacturer explicit code form the applications. Khronos Group's response is OpenXR, a cross platforms that generalises all XR devices. From a flat-screen AR application to a virtual production set, all these cases are covered on the API.
 This system provides a runtime, that interfaces with the XR devices and its capabilities, and connect them to the user application.
 
 ## Foveated rendering
