@@ -22,8 +22,8 @@ The techniques present some old approaches, revisited in this paradigm; some usu
 * MipMap Accelerated Raymarching: modern acceleration on top of classical raymarching.
 * Volumetric Billboards: an unused approach, revisited for mobile.
 * Surface nets: representing mesh generation methods.
-* Empty Space Skipping
-* Octree based rendering
+* Empty Space Skipping: a combination of mesh generation & raymarching, for less iterations.
+* Octree based rendering: an attempt to use pure virtual geometry for rendering.
 
 The volume that is going to be presented is the ubiquitous bonsai 3D texture, and I am going to center in rendering an Isosurface, since when trying to achieve a volumetric or spectral representation there is not a lot of maneuverability with the cost.
 
