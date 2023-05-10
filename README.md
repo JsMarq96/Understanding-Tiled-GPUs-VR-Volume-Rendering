@@ -80,9 +80,12 @@ The main environment is in OpenGL ES 3.3, due its comparable features to OpenGL 
 
 One of the fundamental problems of mobile GPUs is power consumption and thermal efficiency. One of the biggest culprits of this is the high bandwidth required for communication between the different parts of the SoC (System on Chip).
 
-In order to fix that, they proposed the use of a Tiled Architecture for the GPU. The GPU will split the framebuffer in bins, and compute them within a high speed local memory for each bin (called GMEM in Snapdragon Adreno GPUs).
+In order to fix that, they proposed the use of a Tiled Architecture for the GPU. The GPU will split the framebuffer in bins, and compute them within a tiny high-speed on chip local memory for each bin (called GMEM in Snapdragon Adreno GPUs).
 
-This limits the data traffic to the system memory, reducing power consumption. This can help
+This limits the data traffic to the system memory, reducing the need for a high-speed large memory. This results in better power consumption and efficiency.
+
+However this means that more normal rendering approaches are prohibitive. 
+For example, using a deferred pipeline is out of the question. This is caused by the need of doing a render pass, and extracting it to GPU memory for sampling on the next pass. Since the framebuffer is stored in the bins, copying the data back has an extra-cost due to low-bandwidth communcation. This is called on snapdragon a GMEM Load, and are strongly discouraged.
 
 (https://github.com/mems/calepin/blob/main/Graphics/Graphics.md & https://www.youtube.com/watch?v=SeySx0TkluE)
 
@@ -110,3 +113,6 @@ This limits the data traffic to the system memory, reducing power consumption. T
 * [Constrained Elastic Surface Nets:generating smooth surfaces from binary segmented data](https://www.merl.com/publications/docs/TR99-24.pdf)
 * [Smooth Voxel Terrain part 2](https://0fps.net/2012/07/12/smooth-voxel-terrain-part-2/)
 * [Learning from Failure (SIGGRAPH 2015), by Alex Evans of Media Molecule](https://advances.realtimerendering.com/s2015/AlexEvans_SIGGRAPH-2015-sml.pdf)
+* [Compute for Mobile Devices (SIGGRAPH ASIA 2014), by Maxim Shevtson from Intel](https://kesen.realtimerendering.com/Compute_for_Mobile_Devices5.pdf)
+* [Understanding and resolving Graphics Memory Loads](https://developer.qualcomm.com/sites/default/files/docs/adreno-gpu/snapdragon-game-toolkit/gdg/tutorials/android/gmem_loads.html)
+* [Mobile hardware and bandwidth](https://community.arm.com/cfs-file/__key/communityserver-blogs-components-weblogfiles/00-00-00-20-66/siggraph2015_2D00_mmg_2D00_andy_2D00_slides.pdf)
