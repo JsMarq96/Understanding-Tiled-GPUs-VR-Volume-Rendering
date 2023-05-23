@@ -66,8 +66,8 @@ When using RenderDoc, I saw the following
 
 |             | Texture Fetch Stall | Texture L1 miss | Texture L2 miss | ALU instructions per Fragment | EFU instructions per Fragment | Fragment instructions | Texture Pipes busy |
 | ------------- | --------------------- | ----------------- | ----------------- | ------------------------------- | ------------------------------- | ----------------------- | -------------------- |
-| Raymarching | 10.835%             | 23.14%          | 19.84%          | 2206.24633789                 | 5.19638395                    | 1329271680            | 89.00164032        |
-| MAR         | 46.35%              | 23.27%          | 11.09%          | 2255.65307617                 | 0.99751121                    | 1356445568            | 94.78199768        |
+| MAR | 10.835%             | 23.14%          | 19.84%          | 2206.24633789                 | 5.19638395                    | 1329271680            | 89.00164032        |
+| Raymarching         | 46.35%              | 23.27%          | 11.09%          | 2255.65307617                 | 0.99751121                    | 1356445568            | 94.78199768        |
 
 * The texture stall, when compared to raymarching, has gone down from and average of 46.34% to a 10.83%. This proves that there are fewer texture lookups being done.
 * There are fewer texture cache misses.
