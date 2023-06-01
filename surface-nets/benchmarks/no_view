@@ -1,0 +1,139 @@
+Render time: 0.264114; update time: 5.420313
+2023-06-01 13:49:00.075  4723-4766  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.262344; update time: 5.476927
+2023-06-01 13:49:00.089  4723-4766  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.263542; update time: 5.504583
+2023-06-01 13:49:00.103  4723-4766  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.262917; update time: 5.469792
+
+% Stalled on System Memory                 :           0.246
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          31.398
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          19.994
+% Time Shading Vertices                    :          80.006
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.504
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          30.461
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.133
+% Time Shading Vertices                    :          79.867
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.246
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          30.471
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.006
+% Time Shading Vertices                    :          79.994
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.259
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          32.010
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          19.936
+% Time Shading Vertices                    :          80.064
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.179
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          30.937
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          19.962
+% Time Shading Vertices                    :          80.038
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.110
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          30.664
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.236
+% Time Shading Vertices                    :          79.764
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.289
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          31.152
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.552
+% Time Shading Vertices                    :          79.448
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.380
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          31.631
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.731
+% Time Shading Vertices                    :          79.269
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.054
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          31.387
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.690
+% Time Shading Vertices                    :          79.310
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.046
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          31.454
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.594
+% Time Shading Vertices                    :          79.406
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.052
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          30.880
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.546
+% Time Shading Vertices                    :          79.454
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.077
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          30.134
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          20.109
+% Time Shading Vertices                    :          79.891
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.253
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          30.071
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          19.774
+% Time Shading Vertices                    :          80.226
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.827
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          30.400
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          19.858
+% Time Shading Vertices                    :          80.142
+% Time Compute                             :           0.000
+
+% Stalled on System Memory                 :           0.769
+% Instruction Cache Miss                   :           0.000
+% Prims Trivially Rejected                 :          99.558
+% Wave Context Occupancy                   :          32.059
+Textures / Fragment                        :           1.000
+% Time Shading Fragments                   :          19.817
+% Time Shading Vertices                    :          80.183
+% Time Compute                             :           0.000  º
