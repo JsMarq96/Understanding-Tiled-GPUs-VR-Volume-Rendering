@@ -1,7 +1,7 @@
 Render time: 0.264114; update time: 5.420313
-2023-06-01 13:49:00.075  4723-4766  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.262344; update time: 5.476927
-2023-06-01 13:49:00.089  4723-4766  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.263542; update time: 5.504583
-2023-06-01 13:49:00.103  4723-4766  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.262917; update time: 5.469792
+com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.262344; update time: 5.476927
+com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.263542; update time: 5.504583
+com.oculus.sdk.xrmobilevolumetric    V  Render time: 0.262917; update time: 5.469792
 
 % Stalled on System Memory                 :           0.246
 % Instruction Cache Miss                   :           0.000

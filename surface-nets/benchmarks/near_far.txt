@@ -1,8 +1,8 @@
  com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.022813; update time: 1.821562
-2023-06-01 13:52:48.370  5190-5233  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.022135; update time: 1.781302
-2023-06-01 13:52:48.384  5190-5233  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.090052; update time: 1.716459
-2023-06-01 13:52:48.398  5190-5233  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.023282; update time: 1.754896
-2023-06-01 13:52:48.412  5190-5233  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.031875; update time: 1.791927
+com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.022135; update time: 1.781302
+com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.090052; update time: 1.716459
+com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.023282; update time: 1.754896
+ com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.031875; update time: 1.791927
 2023-06-01 13:52:48.426  5190-5233  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.025834; update time: 1.774948
 2023-06-01 13:52:48.439  5190-5233  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.024218; update time: 1.690052
 2023-06-01 13:52:48.453  5190-5233  FRAME_STATS             com.oculus.sdk.xrmobilevolumetric    V  Render time: 3.081302; update time: 1.791562
