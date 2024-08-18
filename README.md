@@ -1,6 +1,7 @@
 # Understanding Tiled Mobile GPUs through VR Volume Rendering
 
 ## NOTE: This is a WIP, the structure and data are due to change in the coming weeks; and suggestions/comments/corrections are always appreciated  :)
+## The final publication with the results and conclusions is [here](https://repositori.upf.edu/handle/10230/58025), as the final project for my computer engineering degree.
 
 ## The Goal and Why
 
